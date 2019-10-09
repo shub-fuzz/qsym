@@ -1,5 +1,5 @@
 Bootstrap: docker
-From: registry.gitlab.com/rode0day/fuzzer-testing/qsym_runnner:16.04
+From: registry.gitlab.com/rode0day/fuzzer-testing/qsym_runner:16.04
 
 %labels
     MAINTAINER Josh Bundt
