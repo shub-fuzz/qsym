@@ -3,14 +3,22 @@ From: registry.gitlab.com/rode0day/fuzzer-testing/qsym_runner:16.04
 
 %labels
     MAINTAINER Josh Bundt
-    DockerTagID ee075fe6a
+    DockerTagID 236abf36e
 
 %environment
     AFL_SKIP_CPUFREQ=1
-    LC_ALL=C
-    LANG=C
+    LC_ALL=en_US.UTF-8
+    LANG=en_US.UTF-8
     export AFL_SKIP_CPUFREQ LC_ALL LANG
 
 %runscript
     exec /start_fuzzing "$@"
 
+%post
+    # In order to get locales working properly inside a Singularity container
+    # we need to do the following:
+    export LANGUAGE=en_US.UTF-8 && \
+    export LANG=en_US.UTF-8 && \
+    export LC_ALL=en_US.UTF-8 && \
+    locale-gen en_US.UTF-8 && \
+    dpkg-reconfigure locales
