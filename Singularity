@@ -3,13 +3,14 @@ From: registry.gitlab.com/rode0day/fuzzer-testing/qsym_runner:16.04
 
 %labels
     MAINTAINER Josh Bundt
-    DockerTagID 087c94dc2
+    DockerTagID 3f9f95327
 
 %environment
     AFL_SKIP_CPUFREQ=1
     LC_ALL=en_US.UTF-8
     LANG=en_US.UTF-8
-    export AFL_SKIP_CPUFREQ LC_ALL LANG
+    TMPDIR=/tmp
+    export AFL_SKIP_CPUFREQ LC_ALL LANG TMPDIR
 
 %runscript
     exec /start_fuzzing "$@"
