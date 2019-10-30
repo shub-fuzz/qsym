@@ -3,7 +3,7 @@ From: registry.gitlab.com/rode0day/fuzzer-testing/qsym_runner:16.04
 
 %labels
     MAINTAINER Josh Bundt
-    DockerTagID ce9cc52c6
+    DockerTagID cfa26fb47
 
 %environment
     AFL_SKIP_CPUFREQ=1
@@ -18,8 +18,15 @@ From: registry.gitlab.com/rode0day/fuzzer-testing/qsym_runner:16.04
 %post
     # In order to get locales working properly inside a Singularity container
     # we need to do the following:
-    export LANGUAGE=en_US.UTF-8 && \
-    export LANG=en_US.UTF-8 && \
-    export LC_ALL=en_US.UTF-8 && \
-    locale-gen en_US.UTF-8 && \
+    export LANGUAGE=en_US.UTF-8
+    export LANG=en_US.UTF-8
+    export LC_ALL=en_US.UTF-8
+    locale-gen en_US.UTF-8
     dpkg-reconfigure locales
+
+    # fixing symlinks in Singularity 2.6
+    cd /usr/local/bin
+    ln -sf afl-clang-fast afl-clang
+    ln -sf afl-clang-fast afl-clang++
+    ln -sf afl-clang-fast afl-clang-fast++
+    ln -sf afl-gcc afl-g++
