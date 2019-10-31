@@ -3,7 +3,7 @@ From: registry.gitlab.com/rode0day/fuzzer-testing/qsym_runner:16.04
 
 %labels
     MAINTAINER Josh Bundt
-    DockerTagID cfa26fb47
+    DockerTagID d5b79fda0
 
 %environment
     AFL_SKIP_CPUFREQ=1
