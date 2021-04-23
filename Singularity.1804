@@ -1,9 +1,9 @@
 Bootstrap: docker
-From: registry.gitlab.com/rode0day/fuzzer-testing/qsym_runner:16.04
+From: registry.gitlab.com/rode0day/fuzzer-testing/qsym_runner:18.04
 
 %labels
     MAINTAINER Josh Bundt
-    DockerTagID ac9d94f9c
+    DockerTagID e61695515
 
 %environment
     AFL_SKIP_CPUFREQ=1
