@@ -3,7 +3,7 @@ Singularity Image for QSYM (https://github.com/sslab-gatech/qsym)
 [![singularity-deploy](https://github.com/shub-fuzz/qsym/actions/workflows/builder.yml/badge.svg?branch=main)](https://github.com/shub-fuzz/qsym/actions/workflows/builder.yml)
 [![https://www.singularity-hub.org/static/img/hosted-singularity--hub-%23e32929.svg](https://www.singularity-hub.org/static/img/hosted-singularity--hub-%23e32929.svg)](https://singularity-hub.org/collections/3625)
 
-- __What__ is [Singularity](https://sylabs.io/singularity/)??  
+- __What__ is [Singularity](https://sylabs.io/singularity/)?  
   A containerization system primarily used by the scientific community on high-performance computing (HPC).
   On many University HPC systems, docker is not allowed, but singularity is availble because it runs with 
   user level permisions.  
